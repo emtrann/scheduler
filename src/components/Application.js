@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import React from "react";
 
 import "components/Application.scss";
 import "components/Appointment";
@@ -9,11 +8,13 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 import useApplicationData from "../hooks/useApplicationData.js";
 
 export default function Application(props) {
-  const {state, setDay, bookInterview, deleteInterview} = useApplicationData(); 
+  const { state, setDay, bookInterview, deleteInterview } = useApplicationData();
 
+  // calling helpers 
   const appointments = getAppointmentsForDay(state, state.day);
   const interviewers = getInterviewersForDay(state, state.day);
 
+  // loads appointments for given timeslot 
   const schedule = appointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
     return (

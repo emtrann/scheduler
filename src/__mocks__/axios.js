@@ -1,3 +1,4 @@
+// test data
 const fixtures = {
   days: [
     {
@@ -55,21 +56,21 @@ const fixtures = {
 
 export default {
   defaults: { baseURL: "" },
-
+  // mock axios put req 
   put: jest.fn(() => {
     return Promise.resolve({
       status: 204,
       statusText: "No Content",
     });
   }),
-
+  // mock axios delete req 
   delete: jest.fn(() => {
     return Promise.resolve({
       status: 204,
       statusText: "No Content"
     });
-  }), 
-
+  }),
+  // mock axios get req 
   get: jest.fn(url => {
     if (url === "/api/days") {
       return Promise.resolve({

@@ -1,8 +1,7 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-import { useVisualMode } from "hooks/useVisualMode";
-
+// shows name of interviewer + student in booked timeslot
 export default function Show(props) {
   return (
     <main className="appointment__card appointment__card--show">

@@ -2,6 +2,7 @@ import React from "react";
 
 import "components/Appointment/styles.scss";
 
+// spinning load circle
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">

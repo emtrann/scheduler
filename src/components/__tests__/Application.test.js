@@ -5,14 +5,14 @@ import axios from "axios";
 import {
   cleanup,
   render,
-  waitForElement, 
-  fireEvent, 
-  getByText, 
-  prettyDOM, 
-  getAllByTestId, 
-  getByAltText, 
-  getByPlaceholderText, 
-  waitForElementToBeRemoved, 
+  waitForElement,
+  fireEvent,
+  getByText,
+  prettyDOM,
+  getAllByTestId,
+  getByAltText,
+  getByPlaceholderText,
+  waitForElementToBeRemoved,
   queryByText,
   queryByAltText
 } from "@testing-library/react";
@@ -67,23 +67,23 @@ describe("Appointment", () => {
     const appointment = getAllByTestId(container, "appointment").find(
       appointment => queryByText(appointment, "Archie Cohen")
     );
-  
+
     fireEvent.click(queryByAltText(appointment, "Delete"));
-  
+
     expect(
       getByText(appointment, "Are you sure you want to delete your interview appointment?")
     ).toBeInTheDocument();
-  
+
     fireEvent.click(queryByText(appointment, "Confirm"));
-  
+
     expect(getByText(appointment, "Deleting")).toBeInTheDocument();
-  
+
     await waitForElement(() => getByAltText(appointment, "Add"));
-  
+
     const day = getAllByTestId(container, "day").find(day =>
       queryByText(day, "Monday")
     );
-  
+
     expect(getByText(day, "1 spot remaining")).toBeInTheDocument();
   });
 
@@ -95,7 +95,7 @@ describe("Appointment", () => {
     const appointment = getAllByTestId(container, "appointment").find(
       appointment => queryByText(appointment, "Archie Cohen")
     );
-  
+
     fireEvent.click(queryByAltText(appointment, "Edit"));
     // We change the name and save the interview.
     fireEvent.change(getByPlaceholderText(appointment, /enter student name/i), {

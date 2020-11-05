@@ -7,21 +7,18 @@ export default function Form(props) {
   const [name, setName] = useState(props.name || '');
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
-
+  // helper for cancel. removes input that user didn't submit
   const reset = function () {
     setName('');
     setInterviewer(null);
   };
-
-  const save = () => {
-    props.onSave(name, interviewer);
-  }
-
+  // goes back to empty appt so user can choose diff appt slot
   const cancel = () => {
     reset();
     props.onCancel();
   };
 
+  // ensures student name has been inputted when booking appt 
   function validate() {
     if (name === "") {
       setError("Student name cannot be blank");
@@ -46,7 +43,7 @@ export default function Form(props) {
             }}
             data-testid="student-name-input"
           />
-         <section className="appointment__validation">{error}</section>
+          <section className="appointment__validation">{error}</section>
           <InterviewerList interviewers={props.interviewers} interviewer={interviewer} setInterviewer={setInterviewer} />
         </form>
       </section>

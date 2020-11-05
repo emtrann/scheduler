@@ -1,8 +1,8 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-import { useVisualMode } from "hooks/useVisualMode";
 
+// default when no interviews are booked in timeslot
 export default function Empty(props) {
   return (
     <main className="appointment__add">

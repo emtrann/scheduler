@@ -1,5 +1,5 @@
 export { getAppointmentsForDay, getInterviewersForDay, getInterview };
-
+//returns list of appointments for day selected 
 function getAppointmentsForDay(state, day) {
   let appointmentArray = [];
   for (const appDay of state.days) {
@@ -11,21 +11,20 @@ function getAppointmentsForDay(state, day) {
   }
   return appointmentArray;
 }
-
+// returns interviewers for selected interview time 
 function getInterviewersForDay(state, day) {
   let interviewersArray = [];
   for (const element of state.days) {
-    if (element.name === day) {
-      for (const appointment of element.appointments) {
-        if (state.appointments[appointment].interview !== null && !interviewersArray.includes(state.interviewers[state.appointments[appointment].interview.interviewer])) {
-          interviewersArray.push(state.interviewers[state.appointments[appointment].interview.interviewer])
-        }
+    if (element.name === day && Array.isArray(element.interviewers)) {
+      for (const appointment of element.interviewers) {
+        interviewersArray.push(state.interviewers[appointment]);
       }
     }
   }
   return interviewersArray;
 }
 
+// gets interview info
 function getInterview(state, interview) {
   if (!interview) {
     return null;

@@ -1,8 +1,8 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-import Button from "components/Button";
 
+// error msg when unable to delete/save appt
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--error">

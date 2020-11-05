@@ -1,4 +1,7 @@
 # Interview Scheduler
+Interview Scheduler is a React application that allows users to book and cancel interviews. Interviews can be selected by clicking into the preferred timeslot, entering their name and selecting their preferred interviewer. They are also able to edit and delete existing interviews. This app utilizes React, Axios, APIs, storybook, Jest, Cypress and Webpack. 
+
+## Screenshots
 
 ## Setup
 
@@ -20,4 +23,10 @@ npm test
 
 ```sh
 npm run storybook
+```
+
+## Running Storybook Visual Testbed
+
+```sh
+npm run cypress
 ```
