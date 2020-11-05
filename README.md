@@ -3,6 +3,10 @@ Interview Scheduler is a React application that allows users to book and cancel 
 
 ## Screenshots
 
+!["Appointment form"](https://github.com/emtrann/scheduler/blob/master/docs/appointment-form.png?raw=true)
+!["Delete confirmation"](https://github.com/emtrann/scheduler/blob/master/docs/delete-confirmation.png?raw=true)
+!["Error confirmation"](https://github.com/emtrann/scheduler/blob/master/docs/error-message.png?raw=true)
+
 ## Setup
 
 Install dependencies with `npm install`.
